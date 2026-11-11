@@ -13,10 +13,10 @@ Build with `./gradlew clean assemble`.
 ### Testing
 Run tests with `./gradlew check`.
 
-Testing is done automatically on PRs and the main branch with the ??? workflow in `.github/workflows`.
+Testing is done automatically on PRs and the main branch with `.github/workflows/build_and_test.yml` workflow.
 
 ### Deployment
-The system is deployed automatically from the main branch to Azure with the ??? workflow in `.github/workflows`.
+The system is deployed automatically from the main branch to Azure with the `.github/workflows/main_ztmma31.yml` workflow.
 
 ### IntelliJ IDEA Recommendations
 - Set `Settings > Build, Execution, Deployment` > `Build Tools` > `Gradle` > `Distribution` to `Wrapper` instead of `Local installation`
