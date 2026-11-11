@@ -11,15 +11,44 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+
+    // Spring plugins
+    id("org.springframework.boot") version "4.1.2"
+    id("io.spring.dependency-management") version "1.1.7"
 }
+
+group = "com.github.ztmma31"
+version = "1.0.0-SNAPSHOT"
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
+// TODO: can the spring dependencies be moved to libs.versions.toml?
 dependencies {
+    // Compile/runtime dependencies
 
+    // Database stuff
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("org.xerial:sqlite-jdbc")
+
+    // Web and UI
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+
+    // Security with Spring
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+
+    // Test dependencies
+    testImplementation(libs.truth)
+
+    // Spring test dependencies
+    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-security-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-thymeleaf-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 }
 
 testing {
