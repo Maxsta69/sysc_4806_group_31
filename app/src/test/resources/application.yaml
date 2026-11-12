@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    # Store the DB in memory only
+    url: "jdbc:sqlite::memory:"
+    driver-class-name: org.sqlite.JDBC
+    # hikari is used by default when spring-boot-starter-jdbc or spring-boot-starter-data-jpa is used apparently
+    hikari:
+      # "SQLite is a single file with no server process coordinating access,
+      # so it allows only one writer at a time across the whole database."
+      maximum-pool-size: 1
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: create-drop

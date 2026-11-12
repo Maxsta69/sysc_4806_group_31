@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jetbrains,git,gradle,linux,windows,macos,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=jetbrains,git,gradle,linux,windows,macos,java
 
+### Capstone Project Manager ###
+app/cpm.db
+
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false

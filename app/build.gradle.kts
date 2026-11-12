@@ -31,6 +31,7 @@ dependencies {
 
     // Database stuff
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.hibernate.orm:hibernate-community-dialects") // Needed for Hibernate to support SQLite
     runtimeOnly("org.xerial:sqlite-jdbc")
 
     // Web and UI
@@ -70,5 +71,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "com.github.ztmma31.cpm.app.CpmApplication"
 }
